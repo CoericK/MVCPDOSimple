@@ -14,7 +14,7 @@ class ModeloBase {
 	private $user = "root";
 
 	// Contraseña de usuario para conexión a la BD
-	private $pw = "123456";
+	private $pw = "";
 
 	// Nombre de la BD
 	private $db = "alumno";
@@ -32,9 +32,12 @@ class ModeloBase {
 
 		$this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
+		// SÓLO PARA MYSQL, verificar si funciona para otros motores de BD
 		// Ayuda a mostrar caracteres especiales
 		$this->dbh->query("SET NAMES 'utf8'");
 
+		// SÓLO PARA MYSQL, verificar si funciona para otros motores de BD
 		// Setea la zona horaria
 		$this->dbh->query("SET time_zone = 'America/Lima'");			
 	}	
